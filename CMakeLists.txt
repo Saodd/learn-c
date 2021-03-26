@@ -3,4 +3,9 @@ project(learn_c C)
 
 set(CMAKE_C_STANDARD 11)
 
-add_executable(learn_c main.c)
+aux_source_directory(. DIR_SRCS)
+
+add_executable(learn_c ${DIR_SRCS})
+
+enable_testing()
+add_test(test_1 learn_c)
